@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Providers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .actions-column {
+            min-width: 160px;
+        }
+        .table-responsive {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .page-header {
+            padding: 20px 0;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/admin/dashboard}">Admin Dashboard</a>
+        <div class="d-flex">
+            <a class="btn btn-outline-light me-2" th:href="@{/admin/dashboard}">Services</a>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="btn btn-outline-light">Logout</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <h2>Manage Providers</h2>
+        <a th:href="@{/admin/add-provider}" class="btn btn-primary">Add New Provider</a>
+    </div>
+
+    <div class="alert alert-success" th:if="${success}" th:text="${success}"></div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover mb-0">
+            <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Specialization</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th class="actions-column">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="provider : ${providers}">
+                <td th:text="${provider.id}"></td>
+                <td th:text="${provider.name}"></td>
+                <td th:text="${provider.specialization}"></td>
+                <td th:text="${provider.email}"></td>
+                <td th:text="${provider.contact}"></td>
+                <td>
+                    <a th:href="@{'/admin/edit-provider/' + ${provider.id}}" class="btn btn-sm btn-warning me-1">Edit</a>
+                    <a th:href="@{'/admin/delete-provider/' + ${provider.id}}" class="btn btn-sm btn-danger"
+                       onclick="return confirm('Are you sure you want to delete this provider?')">Delete</a>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(providers)}">
+                <td colspan="6" class="text-center">No providers found</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

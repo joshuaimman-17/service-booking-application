@@ -1,0 +1,10 @@
+com\servicebooking\admin\repository\ServiceRepository.class
+com\servicebooking\admin\repository\BookingRepository.class
+com\servicebooking\admin\ServiceBookingApplication.class
+com\servicebooking\admin\model\ServiceEntity.class
+com\servicebooking\admin\model\Provider.class
+com\servicebooking\admin\config\SecurityConfig.class
+com\servicebooking\admin\controller\AdminController.class
+com\servicebooking\admin\service\AdminService.class
+com\servicebooking\admin\model\Booking.class
+com\servicebooking\admin\repository\ProviderRepository.class
