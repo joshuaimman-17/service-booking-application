@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+        .features {
+            padding: 80px 0;
+        }
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="/">Service Booking</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Find and Book Services</h1>
+        <p>Discover professional services in your area and book appointments with just a few clicks.</p>
+        <a href="/services" class="btn btn-primary btn-lg">Browse Services</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-12 text-center">
+                <h2>Why Choose Our Platform?</h2>
+                <p class="text-muted">We offer a seamless booking experience for all your services needs</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">📋</div>
+                    <h3>Easy Booking</h3>
+                    <p>Simple and intuitive appointment booking system that takes just minutes.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">👨‍🔧</div>
+                    <h3>Professional Providers</h3>
+                    <p>Our services providers are vetted professionals with years of experience.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Choose appointment times that fit your schedule, 7 days a week.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Service Booking System</h5>
+                <p>Find and book the services you need with ease.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p>&copy; 2025 Service Booking. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

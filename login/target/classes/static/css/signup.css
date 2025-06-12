@@ -1,0 +1,144 @@
+/* Signup Form Specific Styles */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #240046;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.log-card {
+    background-color: #240046;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 7px 7px 10px 3px #24004628;
+}
+
+.heading {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #e0dede;
+    z-index: 1;
+}
+
+.input-group .input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    background-color: #e0dede;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-group .text {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #573b8a;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group .input:focus ~ .text,
+.input-group .input:valid ~ .text {
+    top: -10px;
+    left: 10px;
+    background-color: #240046;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #573b8a;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #6d44b8;
+}
+
+.register {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.no-account {
+    color: #fff;
+    font-size: 14px;
+}
+
+.link {
+    color: #6d44b8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.redText {
+    color: #ff4d4d;
+}
+
+.alert-success {
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.alert-info {
+    background-color: rgba(33, 150, 243, 0.3);
+    color: #2196F3;
+    border: 1px solid #2196F3;
+}
+
+/* Handle date input better for better UX */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8);
+}

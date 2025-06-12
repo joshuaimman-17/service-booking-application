@@ -1,0 +1,16 @@
+com\servicebooking\service\config\SecurityConfig.class
+com\servicebooking\service\config\RestClientConfig.class
+com\servicebooking\service\service\ServiceService.class
+com\servicebooking\service\ServiceBookingApplication.class
+com\servicebooking\service\model\Provider.class
+com\servicebooking\service\controller\ServiceController.class
+com\servicebooking\service\repository\BookingRepository.class
+com\servicebooking\service\controller\ProviderController.class
+com\servicebooking\service\model\Service.class
+com\servicebooking\service\repository\ServiceRepository.class
+com\servicebooking\service\service\BookingService.class
+com\servicebooking\service\service\ProviderService.class
+com\servicebooking\service\model\Booking.class
+com\servicebooking\service\repository\ProviderRepository.class
+com\servicebooking\service\controller\BookingController.class
+com\servicebooking\service\controller\ContentController.class

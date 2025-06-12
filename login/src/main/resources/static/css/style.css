@@ -1,0 +1,111 @@
+body {
+    background-color: #2d0033;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    background-color: #3a0047;
+    border-radius: 12px;
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 10px;
+    background-color: #54006b;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    color: #bbb;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.inputbox input:focus + label,
+.inputbox input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 12px;
+    color: #9e69f2;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9e69f2;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7b00a8;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9e69f2;
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register a {
+    color: #9e69f2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register a:hover {
+    color: #d9a9ff;
+}
+
+.alert {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #4caf50;
+}

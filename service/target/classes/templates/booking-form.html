@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Service Booking System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .booking-header {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        .booking-form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .services-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="/">Service Booking</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/services">Services</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Booking Header -->
+<div class="booking-header">
+    <div class="container">
+        <h1>Book an Appointment</h1>
+        <p class="lead">Please complete the form below to schedule your services</p>
+    </div>
+</div>
+
+<!-- Booking Form -->
+<div class="container mb-5">
+    <div class="booking-form">
+        <!-- Service Details -->
+        <div class="services-details" th:if="${services}">
+            <h4>Service Information</h4>
+            <h5 th:text="${services.name}">Service Name</h5>
+            <p th:text="${services.description}">Service Description</p>
+            <p><strong>Provider:</strong> <span th:text="${services.provider.name}">Provider Name</span></p>
+            <p><strong>Specialization:</strong> <span th:text="${services.provider.specialization}">Specialization</span></p>
+        </div>
+
+        <!-- Alert Messages -->
+        <div class="alert alert-danger" th:if="${error}" th:text="${error}"></div>
+
+        <!-- Booking Form -->
+        <form th:action="@{/book/{serviceId}(serviceId=${service.id})}" method="post" th:object="${booking}">
+
+        <h4>Your Information</h4>
+            <div class="mb-3">
+                <label for="customerName" class="form-label">Your Name *</label>
+                <input type="text" class="form-control" id="customerName" th:field="*{customerName}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="customerEmail" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="customerEmail" th:field="*{customerEmail}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="customerPhone" class="form-label">Phone Number *</label>
+                <input type="tel" class="form-control" id="customerPhone" th:field="*{customerPhone}" required>
+            </div>
+
+            <h4 class="mt-4">Appointment Details</h4>
+            <div class="mb-3">
+                <label for="appointmentDate" class="form-label">Date *</label>
+                <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="appointmentTime" class="form-label">Time *</label>
+                <input type="time" class="form-control" id="appointmentTime" name="appointmentTime" required>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Book Appointment</button>
+                <a href="/services" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Service Booking System</h5>
+                <p>Find and book the services you need with ease.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p>&copy; 2023 Service Booking. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
